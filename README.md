@@ -1,4 +1,4 @@
-# JRToken Smart Contract
+# JRToken
 
 This Solidity program demonstrates the implementation of a basic ERC20 token, **JRToken** (symbol: JRT). It allows the owner to mint tokens and enables users to burn their tokens. The contract is designed using the OpenZeppelin library to ensure it follows standard ERC20 token functionality and provides ownership control over minting.
 
