@@ -1,4 +1,4 @@
-# JRToken
+# JRToken (JRT)
 
 This Solidity program demonstrates the implementation of a basic ERC20 token, **JRToken** (symbol: JRT). It allows the owner to mint tokens and enables users to burn their tokens. The contract is designed using the OpenZeppelin library to ensure it follows standard ERC20 token functionality and provides ownership control over minting.
 
@@ -15,7 +15,7 @@ This contract uses OpenZeppelin's ERC20 standard to implement basic token functi
 
 - **Mint Tokens**: Only the contract owner can mint tokens to a specified address.
 - **Burn Tokens**: Any user can burn their own tokens, reducing their balance and the total supply.
-- **Initial Supply**: The contract owner receives an initial supply of 100 tokens upon deployment.
+- **Initial Supply**: The contract owner receives an initial supply of 100 tokens (adjusted for decimals) upon deployment.
 
 ## Getting Started
 
