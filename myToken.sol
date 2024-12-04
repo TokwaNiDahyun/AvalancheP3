@@ -10,11 +10,15 @@ contract myToken is ERC20, Ownable {
     string private constant _acronym = "JRT";
 
     constructor() ERC20(_tokenName, _acronym) {
-        _mint(msg.sender, 100 * 10**18);
+        _mint(msg.sender, 100);
     }
 
     function mint(address to, uint amount) external onlyOwner {
         _mint(to, amount);
+    }
+
+    function transferTokens(address to, uint amount) external {
+        transfer(to, amount);
     }
 
     function burn(uint amount) external {
