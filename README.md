@@ -15,6 +15,7 @@ This contract uses OpenZeppelin's ERC20 standard to implement basic token functi
 
 - **Mint Tokens**: Only the contract owner can mint tokens to a specified address.
 - **Burn Tokens**: Any user can burn their own tokens, reducing their balance and the total supply.
+- **Transfer Tokens**: Any user can burn their own tokens, reducing their balance and the total supply.
 - **Initial Supply**: The contract owner receives an initial supply of 100 tokens (adjusted for decimals) upon deployment.
 
 ## Getting Started
@@ -38,17 +39,22 @@ contract myToken is ERC20, Ownable {
     string private constant _acronym = "JRT";
 
     constructor() ERC20(_tokenName, _acronym) {
-        _mint(msg.sender, 100 * 10**18);
+        _mint(msg.sender, 100);
     }
 
     function mint(address to, uint amount) external onlyOwner {
         _mint(to, amount);
     }
 
+    function transferTokens(address to, uint amount) external {
+        transfer(to, amount);
+    }
+
     function burn(uint amount) external {
         _burn(msg.sender, amount);
     }
 }
+
 ```
 
 ### Executing the Program
@@ -66,6 +72,8 @@ Once the contract is deployed, you can interact with it using the Remix interfac
   - The owner can mint tokens to any address using the mint(address to, uint amount) function.
 - Burn Tokens:
   - Any user can burn their own tokens by calling the burn(uint amount) function.
+- Transfer Tokens:
+  - Any user can transfer their own tokens to a different address by calling the transferTokens(address to, uint amount) function.
  
 ### Example Use Case:
 1. Mint Tokens: The contract owner mints 100 tokens to their own address using the mint() function.
